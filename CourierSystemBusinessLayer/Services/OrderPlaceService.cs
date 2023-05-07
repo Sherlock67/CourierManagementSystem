@@ -22,5 +22,17 @@ namespace CourierSystemBusinessLayer.Services
         {
             return await order.CreateOrder(orderViewModel);
         }
+        public IEnumerable<Order> TrackOrder(string consignmentnumber)
+        {
+            try
+            {
+                return order.SearchByConsignmentNumber(consignmentnumber); 
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+        }
+
     }
 }

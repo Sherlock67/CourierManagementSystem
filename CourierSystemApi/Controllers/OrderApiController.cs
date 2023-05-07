@@ -1,4 +1,5 @@
 ﻿using CourierSystemBusinessLayer.Services;
+using CourierSystemDataLayer.Model;
 using CourierSystemDataLayer.Viewmodels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ namespace CourierSystemApi.Controllers
     public class OrderApiController : ControllerBase
     {
         private readonly OrderPlaceService orderPlace;
+        private IEnumerable<Order>? result;
         public OrderApiController(OrderPlaceService orderPlace)
         {
             this.orderPlace = orderPlace;
@@ -27,6 +29,22 @@ namespace CourierSystemApi.Controllers
                 return false;
             }
         }
+        [HttpGet("GetDetailsofOrder")]
+        
+        public IEnumerable<Order> ProductNameSearchByName(string consignmentnumber)
+        {
+            
+            try
+            {
+                result = orderPlace.TrackOrder(consignmentnumber);
 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result;
+        }
     }
 }

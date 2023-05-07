@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.Xml.Linq;
 
 namespace CourierSystemDataLayer.Repository
 {
@@ -43,9 +45,21 @@ namespace CourierSystemDataLayer.Repository
             
         }
 
-        public Task SearchByConsignmentNumber(string consignmentNumber)
+        public IEnumerable<Order> SearchByConsignmentNumber(string consignmentNumber)
         {
-            throw new NotImplementedException();
+            IQueryable<Order> query = db.orders;
+            
+            if (!string.IsNullOrEmpty(consignmentNumber))
+            {
+                query = query.Where(e => e.ConsignmentNumber == consignmentNumber);
+            }
+            return query.ToList();
         }
+
+        //public Task SearchByConsignmentNumber(string consignmentNumber)
+        //{
+        //    OrderViewModel orderViewModel = new OrderViewModel();
+
+        //}
     }
 }
