@@ -21,6 +21,8 @@ namespace CourierSystemDataLayer.Model
         public DateTime FinalDateToReachDestination { get; set; } = DateTime.Now + TimeSpan.FromDays(3);
 
         public string CurrentPlace { get; set; }
-
+        
+      
+        
     }
 }

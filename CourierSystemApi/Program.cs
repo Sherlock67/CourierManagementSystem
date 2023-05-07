@@ -1,4 +1,7 @@
+using CourierSystemBusinessLayer.Services;
 using CourierSystemDataLayer.Data;
+using CourierSystemDataLayer.Interfaces;
+using CourierSystemDataLayer.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IOrder, OrderRepository>();
+builder.Services.AddScoped<OrderPlaceService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));
