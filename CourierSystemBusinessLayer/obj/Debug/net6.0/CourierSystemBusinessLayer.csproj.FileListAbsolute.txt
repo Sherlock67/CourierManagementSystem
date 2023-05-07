@@ -1,0 +1,15 @@
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\bin\Debug\net6.0\CourierSystemBusinessLayer.deps.json
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\bin\Debug\net6.0\CourierSystemBusinessLayer.dll
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\bin\Debug\net6.0\CourierSystemBusinessLayer.pdb
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\bin\Debug\net6.0\CourierSystemDataLayer.dll
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\bin\Debug\net6.0\CourierSystemDataLayer.pdb
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.AssemblyInfo.cs
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.csproj.CopyComplete
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.dll
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\refint\CourierSystemBusinessLayer.dll
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\CourierSystemBusinessLayer.pdb
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemBusinessLayer\obj\Debug\net6.0\ref\CourierSystemBusinessLayer.dll
