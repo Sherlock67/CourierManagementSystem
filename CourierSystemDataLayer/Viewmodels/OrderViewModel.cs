@@ -1,6 +1,7 @@
 ﻿using CourierSystemDataLayer.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,13 @@ namespace CourierSystemDataLayer.Viewmodels
 {
     public class OrderViewModel
     {
-        public string ConsignmentNumber { get; set; }
 
+       
         public DateTime OrderPlacingDate { get; set; }
 
         public string ProductName { get; set; }
 
-        public DateTime FinalDateToReachDestination { get; set; } = DateTime.Now + TimeSpan.FromDays(3);
+        public DateTime FinalDateToReachDestination { get; set; } 
 
         public string CurrentPlace { get; set; }
 

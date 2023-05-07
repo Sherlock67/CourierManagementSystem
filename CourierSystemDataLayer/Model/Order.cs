@@ -14,15 +14,16 @@ namespace CourierSystemDataLayer.Model
 
         public string ConsignmentNumber { get; set; }
 
-        public DateTime OrderPlacingDate { get; set; }
+        public DateTime OrderPlacingDate { get; set; }/* = DateTime.Now;*/
 
         public string ProductName { get; set; }
 
-        public DateTime FinalDateToReachDestination { get; set; } = DateTime.Now + TimeSpan.FromDays(3);
+        public DateTime FinalDateToReachDestination { get; set; } /*= DateTime.Now.AddDays(3);*/
 
         public string CurrentPlace { get; set; }
+
         
-      
-        
+
+       
     }
 }

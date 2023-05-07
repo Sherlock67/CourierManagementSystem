@@ -23,11 +23,11 @@ namespace CourierSystemDataLayer.Repository
             Order o = new Order()
             {
                 OrderId = Guid.NewGuid().ToString(),
-            ProductName = order.ProductName,
-               CurrentPlace = order.CurrentPlace,
-               OrderPlacingDate = order.OrderPlacingDate,
-               FinalDateToReachDestination = DateTime.Now + TimeSpan.FromDays(3),
-               ConsignmentNumber = new Random().Next(1, 1000000).ToString(),
+                ProductName = order.ProductName,
+                CurrentPlace = order.CurrentPlace,
+                OrderPlacingDate = DateTime.Now,
+                FinalDateToReachDestination = DateTime.Now.AddDays(3),
+                ConsignmentNumber = new Random().Next(1, 1000000).ToString(),
             };
             Recipant recipant = new Recipant()
             {

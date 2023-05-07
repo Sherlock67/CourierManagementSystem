@@ -1,0 +1,60 @@
+﻿@model CourierSystemDataLayer.Viewmodels.OrderViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style="background-color:aliceblue">
+   @* <partial name="_notification" />*@
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Product Name</label>
+                    <input type="text" asp-for="ProductName" class="form-control" placeholder="ProductName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Patient Name</label>
+                    <input type="text" asp-for="CurrentPlace" class="form-control" placeholder="CurrentPlace">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">Recipant Name</label>
+                <input type="text" asp-for="RecipantName" class="form-control" placeholder="RecipantName">
+
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address</label>
+                <input type="text" asp-for="Address" class="form-control" placeholder="Address">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">MobileNumber</label>
+                    <textarea type="text" asp-for="MobileNumber" class="form-control" placeholder="MobileNumber"></textarea>
+                </div>
+                @*<div class="form-group col-md-4">
+                    <label for="inputState">ConsignmentNumber</label>
+                    <input type="text" asp-for="ConsignmentNumber" class="form-control" placeholder="Medicine" hidden>
+                </div>*@
+                @*<div class="form-group col-md-2">
+                    <label for="inputZip">Next Visit Date</label>
+                    <input type="datetime" asp-for="NextVisitDate" class="form-control" placeholder="Next Visit Date">
+                </div>*@
+            </div>
+
+            <button type="submit" class="mt-2 w-100 green btn btn-success"> <i class="fa-solid fa-prescription"></i>Create Prescription</button>
+            <a class="mt-2 w-100 green btn btn-success" asp-controller="" asp-action="" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i> &nbsp See All Prescription
+            </a>
+        }
+    </div>
+
+</body>
+</html>

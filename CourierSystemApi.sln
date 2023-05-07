@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierSystemApi", "CourierSystemApi\CourierSystemApi.csproj", "{C5FEC963-CC27-46D8-B258-7B891F4125B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourierSystemApi", "CourierSystemApi\CourierSystemApi.csproj", "{C5FEC963-CC27-46D8-B258-7B891F4125B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierSystemBusinessLayer", "CourierSystemBusinessLayer\CourierSystemBusinessLayer.csproj", "{F638B246-CA67-489D-8840-D9292269389F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourierSystemBusinessLayer", "CourierSystemBusinessLayer\CourierSystemBusinessLayer.csproj", "{F638B246-CA67-489D-8840-D9292269389F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierSystemDataLayer", "CourierSystemDataLayer\CourierSystemDataLayer.csproj", "{20DB5A10-F6A6-4DA4-BCC6-7835F09DC59F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourierSystemDataLayer", "CourierSystemDataLayer\CourierSystemDataLayer.csproj", "{20DB5A10-F6A6-4DA4-BCC6-7835F09DC59F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierSystemAdminFrontend", "CourierSystemAdminFrontend\CourierSystemAdminFrontend.csproj", "{42A8C90D-DBC5-436E-99BF-F63848D6812C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourierManagementFrontend", "CourierManagementFrontend\CourierManagementFrontend.csproj", "{502FA874-389A-467C-8FF0-4922F6AA76F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{20DB5A10-F6A6-4DA4-BCC6-7835F09DC59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20DB5A10-F6A6-4DA4-BCC6-7835F09DC59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DB5A10-F6A6-4DA4-BCC6-7835F09DC59F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42A8C90D-DBC5-436E-99BF-F63848D6812C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42A8C90D-DBC5-436E-99BF-F63848D6812C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42A8C90D-DBC5-436E-99BF-F63848D6812C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42A8C90D-DBC5-436E-99BF-F63848D6812C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502FA874-389A-467C-8FF0-4922F6AA76F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502FA874-389A-467C-8FF0-4922F6AA76F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502FA874-389A-467C-8FF0-4922F6AA76F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502FA874-389A-467C-8FF0-4922F6AA76F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
