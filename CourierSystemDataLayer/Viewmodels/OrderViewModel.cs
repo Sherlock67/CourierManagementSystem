@@ -26,6 +26,8 @@ namespace CourierSystemDataLayer.Viewmodels
 
         public string MobileNumber { get; set; }
         
-        public string ConsignmentNumber { get;set; }
+        public int ConsignmentNumber { get;set; }
+
+        public bool OrderStatus { get; set; }
     }
 }

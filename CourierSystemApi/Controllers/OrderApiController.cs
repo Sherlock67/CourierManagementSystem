@@ -1,8 +1,10 @@
 ﻿using CourierSystemBusinessLayer.Services;
+using CourierSystemDataLayer.Data;
 using CourierSystemDataLayer.Model;
 using CourierSystemDataLayer.Viewmodels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CourierSystemApi.Controllers
 {
@@ -10,11 +12,13 @@ namespace CourierSystemApi.Controllers
     [ApiController]
     public class OrderApiController : ControllerBase
     {
+        private readonly ApplicationDbContext db;
         private readonly OrderPlaceService orderPlace;
-        private IEnumerable<Order>? result;
-        public OrderApiController(OrderPlaceService orderPlace)
+       
+        public OrderApiController(OrderPlaceService orderPlace, ApplicationDbContext db)
         {
             this.orderPlace = orderPlace;
+            this.db = db;
         }
         [HttpPost("CreateNewOrder")]
         public async Task<object> CreateNewOrder([FromBody] OrderViewModel orderViewModel)
@@ -30,21 +34,18 @@ namespace CourierSystemApi.Controllers
             }
         }
         [HttpGet("GetDetailsofOrder")]
-        
-        public IEnumerable<Order> GetDetailsofOrder(string consignmentnumber)
+        public async Task<ActionResult<Order>> GetDetailsofOrder(int consignmentnumber)
         {
-            
-            try
-            {
-                result = orderPlace.TrackOrder(consignmentnumber);
 
-            }
-            catch (Exception ex)
+            var order = await db.orders.FirstOrDefaultAsync(o => o.ConsignmentNumber == consignmentnumber);
+
+            if (order == null)
             {
-                throw ex;
+                return NotFound();
             }
 
-            return result;
+            return order;
+
         }
     }
 }

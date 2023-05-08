@@ -6,44 +6,20 @@
         <i class="bi bi-plus-lg"></i> &nbsp Create New Prescription
     </a>
 </div>
-<div class="text-end mt-3">
-    <a asp-controller="MedicalService" asp-action="Index" class="btn btn-primary">
-        <i class="bi bi-plus-lg"></i> &nbsp All Services
+@using (Html.BeginForm())
+{
+    <div class="form-row">
+        <input type="text" asp-for="ConsignmentNumber" class="form-control" placeholder="Write your Consignment Number">
+
+    </div>
+
+
+
+
+    <button type="submit" class="mt-2 w-100 green btn btn-success"> <i class="fa-solid fa-prescription"></i>Track Order</button>
+    <a class="mt-2 w-100 green btn btn-success" asp-controller="" asp-action="" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp See All Prescription
     </a>
-</div>
+}
 
-<table style="width:100%" class="table table-boredered table-striped">
-    <thead>
-        <tr>
-            <th>
-                Consignment Number
-            </th>
-            <th>
-                Order Placing Date
-            </th>
-            <th>
-                Product Name
-            </th>
-            <th>
-                Final Date to Reach Destination
-            </th>
-            <th>
-                Current Place
-            </th>
-           
 
-        </tr>
-    </thead>
-   <tbody>
-       <dt>@Html.DisplayFor(m=>m.ConsignmentNumber)</dt>
-        <dt>@Html.DisplayFor(m=>m.OrderPlacingDate)</dt>
-        <dt>@Html.DisplayFor(m=>m.ProductName)</dt>
-        <dt>@Html.DisplayFor(m=>m.FinalDateToReachDestination)</dt>
-        <dt>@Html.DisplayFor(m=>m.CurrentPlace)</dt>
-   </tbody>
-       
-       
-
-    }
-
-</table>

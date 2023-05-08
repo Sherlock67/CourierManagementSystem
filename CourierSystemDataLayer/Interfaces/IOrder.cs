@@ -12,6 +12,6 @@ namespace CourierSystemDataLayer.Interfaces
     {
 
         public Task<OrderViewModel> CreateOrder(OrderViewModel order);
-        public IEnumerable<Order> SearchByConsignmentNumber(string consignmentNumber);
+        //public IEnumerable<Order> SearchByConsignmentNumber(string consignmentNumber);
     }
 }

@@ -12,7 +12,7 @@ namespace CourierSystemDataLayer.Model
         [Key]
         public string OrderId { get; set; }
 
-        public string ConsignmentNumber { get; set; }
+        public int  ConsignmentNumber { get; set; }
 
         public DateTime OrderPlacingDate { get; set; }/* = DateTime.Now;*/
 
@@ -21,6 +21,8 @@ namespace CourierSystemDataLayer.Model
         public DateTime FinalDateToReachDestination { get; set; } /*= DateTime.Now.AddDays(3);*/
 
         public string CurrentPlace { get; set; }
+
+        public bool OrderStatus { get; set; }
 
         
 

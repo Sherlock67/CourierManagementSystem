@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace CourierSystemDataLayer.Repository
 {
@@ -24,12 +25,14 @@ namespace CourierSystemDataLayer.Repository
         {
             Order o = new Order()
             {
+
                 OrderId = Guid.NewGuid().ToString(),
                 ProductName = order.ProductName,
                 CurrentPlace = order.CurrentPlace,
                 OrderPlacingDate = DateTime.Now,
                 FinalDateToReachDestination = DateTime.Now.AddDays(3),
-                ConsignmentNumber = new Random().Next(1, 1000000).ToString(),
+                ConsignmentNumber = new Random().Next(1, 1000000),
+                OrderStatus = false,
             };
             Recipant recipant = new Recipant()
             {
@@ -45,17 +48,22 @@ namespace CourierSystemDataLayer.Repository
             
         }
 
-        public IEnumerable<Order> SearchByConsignmentNumber(string consignmentNumber)
-        {
-            IQueryable<Order> query = db.orders;
-            
-            if (!string.IsNullOrEmpty(consignmentNumber))
-            {
-                query = query.Where(e => e.ConsignmentNumber == consignmentNumber);
-            }
-            return query.ToList();
-        }
+        //public IEnumerable<Order> SearchByConsignmentNumber(string consignmentNumber)
+        //{
+        //    IQueryable<Order> query = db.orders;
 
-        
+        //    if (!string.IsNullOrEmpty(consignmentNumber))
+        //    {
+        //        query = query.Where(e => e.ConsignmentNumber == consignmentNumber);
+        //    }
+        //    return query.ToList();
+        //}
+
+
+        //public Task SearchByConsignmentNumber(string consignmentNumber)
+        //{
+        //    OrderViewModel orderViewModel = new OrderViewModel();
+
+        //}
     }
 }
