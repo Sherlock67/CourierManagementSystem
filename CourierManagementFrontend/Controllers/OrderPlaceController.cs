@@ -1,4 +1,5 @@
-﻿using CourierSystemDataLayer.Viewmodels;
+﻿using CourierSystemDataLayer.Model;
+using CourierSystemDataLayer.Viewmodels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -31,6 +32,24 @@ namespace CourierManagementFrontend.Controllers
                 }
             }
             return View();
+        }
+        public async Task<IActionResult> GetOrderDetailsByConsignmentNumber()
+        {
+            List<Order> listOfOrder = new List<Order>();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.GetAsync("/api/Prescription/GetAllPrescription");
+                if (responseMsg != null)
+                {
+                    var orderList = responseMsg.Content.ReadAsStringAsync().Result;
+                    listOfOrder = JsonConvert.DeserializeObject<List<Order>>(orderList);
+                }
+            }
+
+            return View(listOfOrder);
         }
     }
 }
