@@ -33,22 +33,25 @@ namespace CourierManagementFrontend.Controllers
             }
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> GetOrderDetailsByConsignmentNumber()
+        
+        
         {
-            List<Order> listOfOrder = new List<Order>();
+            Order listOfOrder = new Order();
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Clear();
                 client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var responseMsg = await client.GetAsync("/api/Prescription/GetAllPrescription");
+                var responseMsg = await client.GetAsync("/api/v1/OrderApi/GetDetailsofOrder");
                 if (responseMsg != null)
                 {
                     var orderList = responseMsg.Content.ReadAsStringAsync().Result;
-                    listOfOrder = JsonConvert.DeserializeObject<List<Order>>(orderList);
+                    listOfOrder = JsonConvert.DeserializeObject<Order>(orderList);
                 }
             }
-
+            //return PartialView("_orderlist", listOfOrder);
             return View(listOfOrder);
         }
     }

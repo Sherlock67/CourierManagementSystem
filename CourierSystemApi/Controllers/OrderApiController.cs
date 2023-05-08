@@ -31,7 +31,7 @@ namespace CourierSystemApi.Controllers
         }
         [HttpGet("GetDetailsofOrder")]
         
-        public IEnumerable<Order> ProductNameSearchByName(string consignmentnumber)
+        public IEnumerable<Order> GetDetailsofOrder(string consignmentnumber)
         {
             
             try

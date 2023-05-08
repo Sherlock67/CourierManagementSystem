@@ -56,10 +56,6 @@ namespace CourierSystemDataLayer.Repository
             return query.ToList();
         }
 
-        //public Task SearchByConsignmentNumber(string consignmentNumber)
-        //{
-        //    OrderViewModel orderViewModel = new OrderViewModel();
-
-        //}
+        
     }
 }

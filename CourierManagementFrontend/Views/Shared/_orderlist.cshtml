@@ -1,0 +1,49 @@
+﻿@model CourierSystemDataLayer.Model.Order
+<h2 class="text-primary">All Prescription List</h2>
+@*<partial name="_notification" />*@
+<div class="text-end">
+    <a asp-controller="Prescription" asp-action="AddPrescription" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp Create New Prescription
+    </a>
+</div>
+<div class="text-end mt-3">
+    <a asp-controller="MedicalService" asp-action="Index" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp All Services
+    </a>
+</div>
+
+<table style="width:100%" class="table table-boredered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Consignment Number
+            </th>
+            <th>
+                Order Placing Date
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Final Date to Reach Destination
+            </th>
+            <th>
+                Current Place
+            </th>
+           
+
+        </tr>
+    </thead>
+   <tbody>
+       <dt>@Html.DisplayFor(m=>m.ConsignmentNumber)</dt>
+        <dt>@Html.DisplayFor(m=>m.OrderPlacingDate)</dt>
+        <dt>@Html.DisplayFor(m=>m.ProductName)</dt>
+        <dt>@Html.DisplayFor(m=>m.FinalDateToReachDestination)</dt>
+        <dt>@Html.DisplayFor(m=>m.CurrentPlace)</dt>
+   </tbody>
+       
+       
+
+    }
+
+</table>
