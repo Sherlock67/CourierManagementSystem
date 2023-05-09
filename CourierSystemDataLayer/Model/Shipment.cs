@@ -10,7 +10,7 @@ namespace CourierSystemDataLayer.Model
     public class Shipment
     {
         [Key]
-        public string ShipmentId { get; set; }
+        public string ShipId { get; set; }
 
         public DateTime ShipmentSentDate { get; set; }
         public DateTime ShipmentArrivedDate { get; set;  }

@@ -36,9 +36,9 @@ namespace CourierSystemDataLayer.Repository
             {
                 return db.shipmentInfos.ToList();
             }
-            catch (Exception ex)
+            catch(Exception e)
             {
-                throw ex;
+                throw e;
             }
         }
 
