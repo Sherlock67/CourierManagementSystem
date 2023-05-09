@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CourierSystemDataLayer.Model.ShipmentInfo>
+
+<h2 class="text-primary">All Prescription List</h2>
+@*<partial name="_notification" />*@
+<div class="text-end">
+    <a asp-controller="Admin" asp-action="CreateNewShipmentInfo" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp Create New Shipment Info
+    </a>
+</div>
+@*<div class="text-end mt-3">
+    <a asp-controller="MedicalService" asp-action="Index" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp All Services
+    </a>
+</div>*@
+
+<table style="width:100%" class="table table-boredered table-striped">
+    <thead>
+        <tr>
+            <th>
+                ShipmentMethod
+            </th>
+            <th>
+                Shipment Terms
+            </th>
+            <th>
+                ShipVia
+            </th>
+            <th>
+                PaymentStatus
+            </th>
+            <th>
+                DeliveryDate
+            </th>
+            
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ShipmentMethod
+            </td>
+            <td>
+                @item.ShippingTerms
+            </td>
+            <td>
+                @item.ShipVia
+            </td>
+            <td>
+                @item.PaymentStatus
+
+            </td>
+            <td>
+                @item.DeliveryDate
+
+            </td>
+            
+            <td>
+                <div class="rounded-pill btn-group">
+                    <a asp-controller="Admin" asp-action="UpdateShipmentInfo" asp-route-id="@item.ShipmentId" class="btn alert-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
+                    <a asp-controller="Admin" asp-action="DeleteShipmentInfo" asp-route-id="@item.ShipmentId" class="btn alert-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
+                </div>
+
+
+            </td>
+        </tr>
+
+    }
+
+</table>

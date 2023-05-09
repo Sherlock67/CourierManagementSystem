@@ -283,3 +283,4 @@ C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend\bin\Debug\
 C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend\bin\Debug\net6.0\CourierSystemDataLayer.dll
 C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend\bin\Debug\net6.0\CourierSystemDataLayer.pdb
 C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend\obj\Debug\net6.0\CourierManagementFrontend.csproj.CopyComplete
+C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

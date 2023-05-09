@@ -35,5 +35,84 @@ namespace CourierManagementFrontend.Areas
             }
             return View();
         }
+        public async Task<IActionResult> AllShippingInfo()
+        {
+            List<ShipmentInfo> infos = new List<ShipmentInfo>();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.GetAsync("/api/v1/Admin/GetAllShipmentInfo");
+                if (responseMsg != null)
+                {
+                    var infolist = responseMsg.Content.ReadAsStringAsync().Result;
+                    infos = JsonConvert.DeserializeObject<List<ShipmentInfo>>(infolist);
+                }
+            }
+
+            return View(infos);
+
+        }
+        public async Task<ActionResult> DeleteShipmentInfo(string? id)
+        {
+            string custommsg = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.DeleteAsync("/api/v1/Admin/DeleteShipmentInfo?id=" + id);
+                if (responseMsg.IsSuccessStatusCode)
+                {
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    custommsg = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+            return RedirectToAction("AllShippingInfo");
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateShipmentInfo(string id)
+        {
+            ShipmentInfo info = new ShipmentInfo();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var prescriptionId = await client.GetAsync("/api/v1/Admin/GetShipmentInfoById?id=" + id);
+                if (prescriptionId.IsSuccessStatusCode)
+                {
+                    var infos = prescriptionId.Content.ReadAsStringAsync().Result;
+                    info = JsonConvert.DeserializeObject<ShipmentInfo>(infos);
+                }
+
+            }
+            return View(info);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateShipmentInfo(ShipmentInfo shipmentInfo)
+        {
+
+            string custommsg = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.PutAsJsonAsync("/api/v1/Admin/UpdateShipmentInfo", shipmentInfo);
+                if (responseMsg.IsSuccessStatusCode)
+                {
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    custommsg = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+            
+            return RedirectToAction("AllShippingInfo");
+
+        }
+
     }
 }

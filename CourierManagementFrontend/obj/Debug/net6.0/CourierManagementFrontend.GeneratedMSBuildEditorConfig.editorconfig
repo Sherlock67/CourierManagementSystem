@@ -15,8 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\USER\source\repos\CourierSystemApi\CourierManagementFrontend
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/AllShippingInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsU2hpcHBpbmdJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/CreateNewShipmentInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlTmV3U2hpcG1lbnRJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/UpdateShipmentInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlU2hpcG1lbnRJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Home/Index.cshtml]

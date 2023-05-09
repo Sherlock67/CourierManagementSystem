@@ -63,8 +63,8 @@ namespace CourierSystemApi.Areas.Admin.Controllers
                 return false;
             }
         }
-        [HttpPut("UpdatePrescription")]
-        public bool UpdatePrescription(ShipmentInfo shipmentInfo)
+        [HttpPut("UpdateShipmentInfo")]
+        public bool UpdateShipmentInfo(ShipmentInfo shipmentInfo)
         {
             try
             {
