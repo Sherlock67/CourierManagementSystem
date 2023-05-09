@@ -24,6 +24,7 @@ namespace CourierSystemDataLayer.Data
         public DbSet<Shipment> shipments { get; set; }
         public DbSet<ShipperInfo> shippers { get; set; }
         public DbSet<ShipmentInfo> shipmentInfos { get; set; }
+        public DbSet<AdminClass> admins { get; set; }
 
     }
 }

@@ -14,6 +14,7 @@ namespace CourierSystemApi.Areas.Admin.Controllers
     public class AdminController : ControllerBase
     {
         private readonly ShipmentInfoService shipmentInfoService;
+
         private readonly ApplicationDbContext db;
         public AdminController(ShipmentInfoService shipmentInfoService, ApplicationDbContext db)
         {
@@ -105,7 +106,7 @@ namespace CourierSystemApi.Areas.Admin.Controllers
             db.orders.Update(entity);
             db.SaveChanges();
         }
-
+        
 
 
 
