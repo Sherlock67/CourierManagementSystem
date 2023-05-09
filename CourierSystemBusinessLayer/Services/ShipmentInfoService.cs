@@ -35,7 +35,7 @@ namespace CourierSystemBusinessLayer.Services
         {
             return shipmentInfo.GetById(id);
         }
-        public async Task UpdatePrescription(ShipmentInfo obj)
+        public async Task UpdateShipmentInfo(ShipmentInfo obj)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace CourierSystemBusinessLayer.Services
                 throw;
             }
         }
-        public async Task DeletePrescription(string id)
+        public async Task DeleteShipmentInfo(string id)
         {
 
             try

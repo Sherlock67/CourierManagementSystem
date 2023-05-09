@@ -13,7 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IOrder, OrderRepository>();
-
+builder.Services.AddScoped<IShipmentInfo, ShipmentInfoRepository>();
+builder.Services.AddScoped<ShipmentInfoService>();
 builder.Services.AddScoped<OrderPlaceService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
