@@ -111,6 +111,53 @@ namespace CourierSystemDataLayer.Migrations
 
                     b.ToTable("shipments");
                 });
+
+            modelBuilder.Entity("CourierSystemDataLayer.Model.ShipmentInfo", b =>
+                {
+                    b.Property<string>("ShipmentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("DeliveryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShipVia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShipmentMethod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShippingTerms")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShipmentId");
+
+                    b.ToTable("shipmentInfos");
+                });
+
+            modelBuilder.Entity("CourierSystemDataLayer.Model.ShipperInfo", b =>
+                {
+                    b.Property<string>("ShipperId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ShipperName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShipperPhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShipperId");
+
+                    b.ToTable("shippers");
+                });
 #pragma warning restore 612, 618
         }
     }

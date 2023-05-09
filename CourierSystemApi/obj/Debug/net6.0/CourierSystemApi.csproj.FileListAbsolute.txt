@@ -285,3 +285,4 @@ C:\Users\USER\source\repos\CourierSystemApi\CourierSystemApi\obj\Debug\net6.0\re
 C:\Users\USER\source\repos\CourierSystemApi\CourierSystemApi\obj\Debug\net6.0\CourierSystemApi.pdb
 C:\Users\USER\source\repos\CourierSystemApi\CourierSystemApi\obj\Debug\net6.0\CourierSystemApi.genruntimeconfig.cache
 C:\Users\USER\source\repos\CourierSystemApi\CourierSystemApi\obj\Debug\net6.0\ref\CourierSystemApi.dll
+C:\Users\USER\source\repos\CourierSystemApi\CourierSystemApi\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll

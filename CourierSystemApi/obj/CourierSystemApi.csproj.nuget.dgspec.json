@@ -64,7 +64,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.13, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

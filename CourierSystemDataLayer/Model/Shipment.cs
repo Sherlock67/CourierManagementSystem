@@ -17,6 +17,8 @@ namespace CourierSystemDataLayer.Model
         public string ShipmentType { get; set; }
         //customer -> one to many relationship 
         //shipment info -> normal property
+
+
         //delivery boy info 
         public string ShipmentDescription { get; set; }
     }
