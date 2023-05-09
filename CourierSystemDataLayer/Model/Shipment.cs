@@ -15,6 +15,9 @@ namespace CourierSystemDataLayer.Model
         public DateTime ShipmentSentDate { get; set; }
         public DateTime ShipmentArrivedDate { get; set;  }
         public string ShipmentType { get; set; }
+        //customer -> one to many relationship 
+        //shipment info -> normal property
+        //delivery boy info 
         public string ShipmentDescription { get; set; }
     }
 }
