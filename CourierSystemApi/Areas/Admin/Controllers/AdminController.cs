@@ -1,8 +1,11 @@
 ﻿using CourierSystemBusinessLayer.Services;
+using CourierSystemDataLayer.Data;
+using CourierSystemDataLayer.Migrations;
 using CourierSystemDataLayer.Model;
 using CourierSystemDataLayer.Viewmodels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CourierSystemApi.Areas.Admin.Controllers
 {
@@ -11,9 +14,11 @@ namespace CourierSystemApi.Areas.Admin.Controllers
     public class AdminController : ControllerBase
     {
         private readonly ShipmentInfoService shipmentInfoService;
-        public AdminController(ShipmentInfoService shipmentInfoService)
+        private readonly ApplicationDbContext db;
+        public AdminController(ShipmentInfoService shipmentInfoService, ApplicationDbContext db)
         {
             this.shipmentInfoService = shipmentInfoService;
+            this.db = db;
         }
 
         [HttpPost("CreateNewShipmentInfo")]
@@ -48,7 +53,6 @@ namespace CourierSystemApi.Areas.Admin.Controllers
             {
                 throw;
             }
-
         }
         [HttpDelete("DeleteShipmentInfo")]
         public bool DeleteShipmentInfo(string id)
@@ -76,6 +80,32 @@ namespace CourierSystemApi.Areas.Admin.Controllers
                 return false;
             }
         }
+        [HttpGet("GetDetailsofOrder")]
+        public async Task<ActionResult<Order>> GetDetailsofOrder(int consignmentnumber)
+        {
+
+            var order = await db.orders.FirstOrDefaultAsync(o => o.ConsignmentNumber == consignmentnumber);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            return order;
+
+        }
+        [HttpGet("GetById")]
+        public Order GetById(string Id)
+        {
+            return db.orders.Where(x => x.OrderId == Id).SingleOrDefault();
+        }
+        [HttpPut("UpdateOrder")]
+        public void UpdateOrder(Order entity)
+        {
+            db.orders.Update(entity);
+            db.SaveChanges();
+        }
+
 
 
 

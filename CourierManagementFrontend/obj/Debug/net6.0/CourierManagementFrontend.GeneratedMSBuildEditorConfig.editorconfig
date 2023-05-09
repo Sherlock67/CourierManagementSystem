@@ -23,6 +23,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlTmV3U2hpcG1lbnRJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/GetOrderDetailsByConsignmentNumber.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0T3JkZXJEZXRhaWxzQnlDb25zaWdubWVudE51bWJlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/UpdateOrder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlT3JkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/USER/source/repos/CourierSystemApi/CourierManagementFrontend/Views/Admin/UpdateShipmentInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlU2hpcG1lbnRJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

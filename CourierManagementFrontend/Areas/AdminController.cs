@@ -114,5 +114,68 @@ namespace CourierManagementFrontend.Areas
 
         }
 
+        public async Task<IActionResult> GetOrderDetailsByConsignmentNumber(int consignmentnumber)
+
+        {
+            Order listOfOrder = new Order();
+            //List<Order> listOfOrder = new List<Order>();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.GetAsync("/api/v1/Admin/GetDetailsofOrder?consignmentnumber=" + consignmentnumber);
+                if (responseMsg != null)
+                {
+                    var orderList = responseMsg.Content.ReadAsStringAsync().Result;
+                    listOfOrder = JsonConvert.DeserializeObject<Order>(orderList);
+                }
+            }
+            // return PartialView("_orderlist", listOfOrder);
+            return View("GetOrderDetailsByConsignmentNumber", listOfOrder);
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateOrder(string id )
+        {
+            Order o = new Order();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var prescriptionId = await client.GetAsync("/api/v1/Admin/GetById?id=" + id);
+                if (prescriptionId.IsSuccessStatusCode)
+                {
+                    var infos = prescriptionId.Content.ReadAsStringAsync().Result;
+                    o = JsonConvert.DeserializeObject<Order>(infos);
+                }
+
+            }
+            return View(o);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateOrder(Order order)
+        {
+
+            string custommsg = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.PutAsJsonAsync("/api/v1/Admin/UpdateOrder", order);
+                if (responseMsg.IsSuccessStatusCode)
+                {
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    custommsg = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+
+            return RedirectToAction("AllShippingInfo");
+
+        }
+
+
     }
 }
