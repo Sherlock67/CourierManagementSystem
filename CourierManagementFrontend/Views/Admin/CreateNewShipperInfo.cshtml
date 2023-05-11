@@ -1,0 +1,57 @@
+﻿@model CourierSystemDataLayer.Model.ShipperInfo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style="background-color:aliceblue">
+    <div class="container">
+        @using (Html.BeginForm("CreateNewShipperInfo", "Admin", FormMethod.Post))
+        {
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">SellerName</label>
+                    <input type="datetime" asp-for="SellerName " class="form-control" placeholder="SellerName">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">SellerEmail</label>
+                    <input type="text" asp-for="SellerEmail" class="form-control" placeholder="SellerEmail">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress">SellerPhoneNumber</label>
+                <input type="number" asp-for="SellerPhoneNumber" class="form-control" placeholder="SellerPhoneNumber">
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">ShopName</label>
+                <input type="text" asp-for="ShopName" class="form-control" placeholder="ShopName">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">ShipperName</label>
+                    <textarea type="text" asp-for="ShipperName" class="form-control" placeholder="ShipperName"></textarea>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">ShipperPhoneNumber</label>
+                    <input type="text" asp-for="ShipperPhoneNumber" class="form-control" placeholder="ShipperPhoneNumber">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">ShopAddress</label>
+                    <input type="datetime" asp-for="ShopAddress" class="form-control" placeholder="ShopAddress">
+                </div>
+            </div>
+
+            <button type="submit" class="mt-2 w-100 green btn btn-success"> <i class="fa-solid fa-prescription"></i>Create New Shipperinfo</button>
+            <a class="mt-2 w-100 green btn btn-success" asp-controller="Admin" asp-action="AllShipperInfo" class="btn btn-primary">
+                <i class="bi bi-plus-lg"></i> &nbsp See All AllShipperInfo
+            </a>
+        }
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CourierSystemDataLayer.Model.ShipperInfo>
+
+<h2 class="text-primary">All Shipper Info </h2>
+@*<partial name="_notification" />*@
+<div class="text-end">
+    <a asp-controller="Admin" asp-action="CreateNewShipmentInfo" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> &nbsp Create New Shipment Info
+    </a>
+</div>
+
+
+<table style="width:100%" class="table table-boredered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Shipper Name
+            </th>
+            <th>
+                ShipperPhoneNumber
+            </th>
+            <th>
+                ShopName
+            </th>
+            <th>
+                ShopAddress
+            </th>
+            <th>
+                SellerName
+            </th>
+            <th>
+                SellerPhoneNumber
+            </th>
+            <th>
+                SellerEmail
+            </th>
+
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ShipperName
+            </td>
+            <td>
+                @item.ShipperPhoneNumber
+            </td>
+            <td>
+                @item.ShopName
+            </td>
+            <td>
+                @item.ShopAddress
+
+            </td>
+            <td>
+                @item.SellerName
+
+            </td>
+            <td>
+                @item.SellerPhoneNumber
+
+            </td>
+            <td>
+                @item.SellerEmail
+            </td>
+
+            <td>
+                <div class="rounded-pill btn-group">
+                    <a asp-controller="Admin" asp-action="UpdateShipperInfo" asp-route-id="@item.ShipperId" class="btn alert-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
+                    <a asp-controller="Admin" asp-action="DeleteShipperInfo" asp-route-id="@item.ShipperId" class="btn alert-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
+                </div>
+
+
+            </td>
+        </tr>
+
+    }
+
+</table>

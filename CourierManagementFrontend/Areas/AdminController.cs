@@ -143,10 +143,10 @@ namespace CourierManagementFrontend.Areas
                 client.DefaultRequestHeaders.Clear();
                 client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var prescriptionId = await client.GetAsync("/api/v1/Admin/GetById?id=" + id);
-                if (prescriptionId.IsSuccessStatusCode)
+                var o_id = await client.GetAsync("/api/v1/Admin/GetById?id=" + id);
+                if (o_id.IsSuccessStatusCode)
                 {
-                    var infos = prescriptionId.Content.ReadAsStringAsync().Result;
+                    var infos = o_id.Content.ReadAsStringAsync().Result;
                     o = JsonConvert.DeserializeObject<Order>(infos);
                 }
 
@@ -173,6 +173,110 @@ namespace CourierManagementFrontend.Areas
             }
 
             return RedirectToAction("AllShippingInfo");
+
+        }
+        [HttpGet]
+        public IActionResult CreateNewShipperInfo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNewShipperInfo(ShipperInfo shipperinfo)
+        {
+            ShipperInfo _shipperinfo;
+            
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.PostAsJsonAsync("/api/v1/Admin/CreateNewShipperInfo", shipperinfo);
+                if (responseMsg != null)
+                {
+
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    _shipperinfo = JsonConvert.DeserializeObject<ShipperInfo>(res);
+                }
+            }
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateShipperInfo(string id)
+        {
+            ShipperInfo info = new ShipperInfo();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var shipperId = await client.GetAsync("/api/v1/Admin/GetShipperInfoById?id=" + id);
+                if (shipperId.IsSuccessStatusCode)
+                {
+                    var infos = shipperId.Content.ReadAsStringAsync().Result;
+                    info = JsonConvert.DeserializeObject<ShipperInfo>(infos);
+                }
+
+            }
+            return View(info);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateShipperInfo(ShipperInfo info)
+        {
+
+            string custommsg = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.PutAsJsonAsync("/api/v1/Admin/UpdateShipperInfo", info);
+                if (responseMsg.IsSuccessStatusCode)
+                {
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    custommsg = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+
+            return RedirectToAction("AllShipperInfo");
+
+        }
+        public async Task<IActionResult> AllShipperInfo()
+        {
+            List<ShipperInfo> infos = new List<ShipperInfo>();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.GetAsync("/api/v1/Admin/GetAllShipperInfo");
+                if (responseMsg != null)
+                {
+                    var infolist = responseMsg.Content.ReadAsStringAsync().Result;
+                    infos = JsonConvert.DeserializeObject<List<ShipperInfo>>(infolist);
+                }
+            }
+
+            return View(infos);
+
+        }
+        public async Task<ActionResult> DeleteShipperInfo(string? id)
+        {
+            string custommsg = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(url);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var responseMsg = await client.DeleteAsync("/api/v1/Admin/DeleteShipperInfo?id=" + id);
+                if (responseMsg.IsSuccessStatusCode)
+                {
+                    var res = responseMsg.Content.ReadAsStringAsync().Result;
+                    custommsg = JsonConvert.DeserializeObject<string>(res);
+                }
+            }
+            return RedirectToAction("AllShipperInfo");
 
         }
 

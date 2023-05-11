@@ -18,10 +18,7 @@ namespace CourierSystemBusinessLayer.Services
               this.adminAuth = adminAuth;
         }
 
-        public async Task<AdminClass> RegisterAdmin(AdminClass admin,string password)
-        {
-            return await adminAuth.RegisterUser(admin, password);
-        }
+        
         public async Task<AdminClass> LoginAdmin(string username,string password)
         {
             if (string.IsNullOrEmpty(username))
