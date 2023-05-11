@@ -14,10 +14,10 @@ namespace CourierSystemDataLayer.Model
 
         public string CustomerName { get; set; }
 
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string CustomerUsername { get; set; }
+        public string CustomerPassword { get; set; }
+        public string CustomerEmail { get; set; }
+        public string ConfirmPassword { get; set; }
         //public string ProductName { get; set; }
 
 

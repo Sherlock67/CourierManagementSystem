@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace CourierSystemDataLayer.Interfaces
 {
-    public interface IAuth<T>
+    public interface IAdmin : IRepository<AdminClass>
     {
-        Task<T> RegisterUser(T user, string password);
-        Task<T> Login(string username, string password);
-        Task<bool> UserExist(string username);
+        Task<AdminClass> GetAdminByUserName(string username);
     }
 }

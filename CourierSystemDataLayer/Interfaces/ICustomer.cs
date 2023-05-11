@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace CourierSystemDataLayer.Interfaces
 {
-    public interface ICustomerAuth : IAuth<Customer>
+    public interface ICustomer : IRepository<Customer>
     {
+        Task<Customer> GetCustomerByEmailId (string emailId);   
     }
 }

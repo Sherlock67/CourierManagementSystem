@@ -17,11 +17,20 @@ namespace CourierSystemApi.Areas.Admin.Controllers
         private readonly ShipmentInfoService shipmentInfoService;
         private readonly ShipperService shipperService;
         private readonly ApplicationDbContext db;
-        public AdminController(ShipmentInfoService shipmentInfoService, ApplicationDbContext db,ShipperService shipperService)
+        private readonly AdminService adminService;
+        public AdminController(ShipmentInfoService shipmentInfoService, ApplicationDbContext db,ShipperService shipperService, AdminService adminService)
         {
             this.shipperService = shipperService;
             this.shipmentInfoService = shipmentInfoService;
             this.db = db;
+            this.adminService = adminService;
+        }
+      
+        [HttpPost("AdminLogin")]
+        public async Task<bool> UserLogin(AdminLogin login)
+        {
+            return await adminService.VerifyAdmin(login);
+
         }
         [HttpPost("CreateNewShipperInfo")]
         public async Task<Object> CreateNewShipperInfo([FromBody] ShipperInfo shipperInfo)
