@@ -37,7 +37,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCity">MobileNumber</label>
-                    <textarea type="text" asp-for="MobileNumber" class="form-control" placeholder="MobileNumber"></textarea>
+                    <input type="text" asp-for="MobileNumber" class="form-control" placeholder="MobileNumber">
                 </div>
                
             </div>
@@ -45,6 +45,8 @@
             <button type="submit" class="mt-2 w-100 green btn btn-success"> <i class="fa-solid fa-prescription"></i>Create Order</button>
            
         }
+        <a asp-controller="OrderPlace" asp-action="GetOrderDetailsByConsignmentNumber" asp-route-id="" class="btn mt-5 alert-primary mx-2"> <i class="bi bi-pencil-square"></i> Search By Consignment Number</a>
+                  
     </div>
 
 </body>
