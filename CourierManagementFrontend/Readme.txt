@@ -21,3 +21,7 @@ Requirement
 
 	Couldnot apply pagination 
 	and could not apply role and jwt authentication.
+
+
+Admin : username : admin
+        password : 22502
