@@ -20,6 +20,8 @@ builder.Services.AddScoped<IShipperInfo, ShipperInfoRepository>();
 builder.Services.AddScoped<ShipperService>();
 builder.Services.AddScoped<ICustomer,CustomerRepository>();
 builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<IAdmin, AdminRepository>();
+builder.Services.AddScoped<AdminService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     ));

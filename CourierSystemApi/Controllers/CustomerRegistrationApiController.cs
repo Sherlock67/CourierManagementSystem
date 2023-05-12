@@ -31,9 +31,9 @@ namespace CourierSystemApi.Controllers
             }
         }
         [HttpPost("CustomerLogin")]
-        public async Task<bool> UserLogin(Login login)
+        public async Task<bool> CustomerLogin(CustomerLogin customer)
         {
-            return await customerService.VerifyUserAsync(login);
+            return await customerService.VerifyUserAsync(customer);
 
         }
     }

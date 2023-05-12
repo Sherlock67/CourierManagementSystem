@@ -23,12 +23,12 @@ namespace CourierSystemBusinessLayer.Services
         {
             return await customer.Create(c);
         }
-        public async Task<bool> VerifyUserAsync(Login login)
+        public async Task<bool> VerifyUserAsync(CustomerLogin login)
         {
-            var obj = await customer.GetCustomerByEmailId(login.EmailId);
+            var obj = await customer.GetCustomerByEmailId(login.CustomerEmail);
             if (obj != null)
             {
-                if (obj.CustomerPassword == login.Password)
+                if (obj.CustomerPassword == login.CustomerPassword)
                 {
                     return true;
 

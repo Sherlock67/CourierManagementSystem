@@ -10,7 +10,7 @@ namespace CourierSystemDataLayer.Model
     public class Customer
     {
         [Key]
-        public string CustomerId { get; set; }
+        public string CustomerId { get; set; } = Guid.NewGuid().ToString(); 
 
         public string CustomerName { get; set; }
 
